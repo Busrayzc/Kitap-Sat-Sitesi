@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>E-Kitap</title>
+</head>
+
+<body>
+<header>
+    <h1>E-Kitap Web Sitesi</h1> <!-- başlık -->
+    <div class="search-container">
+        <input type="text" placeholder="Kitap Ara...">
+        <button type="button">Ara</button>
+    </div>
+</header>
+<!--bu kodlar üst kısmın kodları-->
+
+
+
+<nav>
+    <ul>
+        <li><a href="#" onclick="showTab('homepage')">Anasayfa</a></li>
+        <li><a href="#" onclick="showTab('bestsellers')">Çok Satanlar</a></li>
+        <li><a href="#" onclick="showTab('new-releases')">Yeni Çıkanlar</a></li>
+        <li><a href="#" onclick="showTab('favorites')">Favoriler</a></li>
+        <li><a href="#" onclick="showTab('cart')">Sepetim</a></li>
+
+    </ul>
+</nav>
+<!--bunlar yeni sekme yerine aynı sayfada açabilmek için sayfa başlıkları-->
+
+<div class="container">
+    <section id="homepage" class="tab-content">
+        <!-- Gelişmiş Kategori Menüsü -->
+        <div class="category-menu" id="category-menu">
+            <ul>
+                <li><a href="#" onclick="openCategory('Romantik')">Romantik</a></li>
+                <li><a href="#" onclick="openCategory('Bilim Kurgu')">Bilim Kurgu</a></li>
+                <li><a href="#" onclick="openCategory('Polisiye')">Polisiye</a></li>
+                <li><a href="#" onclick="openCategory('Fantastik')">Fantastik</a></li>
+                <li><a href="#" onclick="openCategory('Drama')">Drama</a></li>
+                <li><a href="#" onclick="openCategory('Biyografi')">Biyografi</a></li>
+                <li><a href="#" onclick="openCategory('Korku')">Korku</a></li>
+                <li><a href="#" onclick="openCategory('Macera')">Macera</a></li>
+                <li><a href="#" onclick="openCategory('Bilgi kitapları')">Bilgi kitapları</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!--bunlar yeni sekme yerine aynı sayfada açabilmek için kategoriler -->
+
+    <section id="bestsellers" class="tab-content">
+        <h2>Çok Satanlar</h2> <!--bölümü-->
+        <div id="bestsellers-list"></div>
+    </section>
+
+    <section id="new-releases" class="tab-content">
+        <h2>Yeni Çıkanlar</h2>   <!--bölümü-->
+        <div id="new-releases-list"></div>
+    </section>
+
+    <!-- Favoriler -->
+
+    <section id="favorites" class="tab-content">
+        <h2>Favoriler</h2> <!--bölümü-->
+        <div id="favorites-list"></div>
+
+        <!--burda sepetim bölümü içerisinde bulunan ürünler, ürünlerin fiyatı, sepeti onayla ve ödeme seçenekleri yer almaktadır.-->
+    </section>
+    <section id="cart" class="tab-content">
+        <h2>Sepetim</h2>
+
+        <div id="cart-items"></div>
+        <div id="sepet">Sepetinizde ürün bulunmamaktadır. </div> <!--hiç ürün bulunmadığında bu yazı gösterilecek.-->
+        <div id="total-price">Toplam: 0.00</div>
+        <button onclick="checkout()">Sepeti Onayla</button>
+    </section>
+    <title>Ödeme Sayfası</title>
+    </head>
+    <body>
+    <!--ödeme seçenekleri ekranında kredi/banka kartı ve kapıda ödeme yöntemleri bulunuyor.-->
+    <section id="payment-options" class="tab-content">
+        <h2>Ödeme Seçenekleri</h2>
+        <form id="payment-form">
+            <label>
+                <input type="radio" name="paymentOption" value="creditCard">
+                Kredi/Banka Kartı
+            </label>
+            <label>
+                <input type="radio" name="paymentOption" value="cashOnDelivery">
+                Kapıda Ödeme
+            </label>
+            <button type="button" onclick="completePayment()">Seç</button>
+        </form>
+    </section>
+
+
+    <!--kategori içerikleri-->
+    <section id="category-content" class="tab-content">
+    </section>
+</div>
+<!--ödeme ekranında kredi kartı bilgileri ve ödemeyi tamamla butonu yer almaktadır.-->
+<div id="payment-screen" class="tab-content">
+    <h2>Ödeme Ekranı</h2>
+    <form onsubmit="processPayment(); return false;">
+        <label for="card-number">Kredi Kartı Numarası:</label>
+        <input type="text" id="card-number" required>
+
+        <label for="expiration-date">Son Kullanma Tarihi:</label>
+        <input type="text" id="expiration-date" placeholder="MM/YYYY" required>
+
+        <label for="cvv">CVV:</label>
+        <input type="text" id="cvv" required>
+
+        <button type="submit">Ödemeyi Tamamla</button>
+    </form>
+</div>
+</section>
+
+<!--gelişmiş kategori bilgileri (id) bulunmakta.-->
+<section id="category" class="tab-content">
+  <h2>Gelişmiş Kategoriler</h2>
+  <div class="category-menu" id="category-menu">
+  </div>
+  <section id="category-content" class="tab-content">
+  </section>
+</section>
+
+<head>
+
+
+    <!--yazı tipi kütüphanesi-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<script src="script.js"></script>
+<!--script dosyasını yönlendirme-->
+</body>
+
+</html>

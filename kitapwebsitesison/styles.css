@@ -1,0 +1,469 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ekranın tamamını kaplaması için */
+}
+
+header {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+}
+
+.search-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end; /* Sağa yaslama */
+    align-items: center;
+}
+
+.search-container input {
+    padding: 8px;
+    margin-right: 4px;
+    border: 1px solid #ddd; /* Kenarlık ekleyelim */
+    border-radius: 4px; /* Köşeleri yuvarlayalım */
+}
+
+
+
+.search-container button {
+    padding: 8px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+nav {
+    background-color: #f2f2f2;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1; /* İçerik kısmının tüm alanı kaplaması için */
+}
+
+.tab-content {
+    display: none;
+    text-align: center;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Kitaplar bölümü */
+#bestsellers-list, #new-releases-list, #homepage {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#bestsellers-list div,
+#new-releases-list div,
+#homepage div {
+    width: 20%;
+    margin: 10px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block; /* Eski tarayıcılarda da destek almak için */
+    box-sizing: border-box; /* Padding ve border'ın genişliği dahil edilsin */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+#bestsellers-list img, #new-releases-list img, #homepage img  {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+#bestsellers-list p, #new-releases-list p, #homepage p   {
+    margin: 10px 0;
+}
+
+#bestsellers-list button, #new-releases-list button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#bestsellers-list button:hover, #new-releases-list button:hover {
+    background-color: #45a049;
+}
+/* Sepetim bölümü */
+/* Sepetim bölümü kategorisel stil  */
+#cart {
+    width: auto;
+    margin-right: auto;
+    padding: 50px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    background-position: center;
+    background-size: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#cart h2 {
+    color: #333;
+}
+
+#cart-items {
+    margin-top: 10px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.cart-item img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+#total-price {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#checkout-button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+#checkout-button:hover {
+    background-color: #45a049;
+}
+
+
+/* Kategori menüsü stilini özelleştirme */
+.category-menu {
+    background-color: #2c3e50;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* Kategori menüsünü dikey yönde düzenle */
+}
+
+.category-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.category-menu li {
+    margin-bottom: 10px; /* Her kategori arasına boşluk ekleyelim */
+}
+
+.category-menu a {
+    text-decoration: none;
+    color: #ecf0f1;
+    font-weight: bold;
+    padding: 6px 10px;
+    border-radius: 2px;
+    display: block; /* Bağlantıları blok öğe yaparak tam genişlikte göster */
+}
+
+.category-menu a:hover {
+    background-color: #3498db;
+    color: #fff;
+}
+
+/* Ek düzenlemeler */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ecf0f1;
+    color: #333;
+    margin: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content h2 {
+    color: #2c3e50;
+}
+
+
+/* Ödeme Ekranı Stilleri */
+.payment-form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 90px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.payment-form h2 {
+    color: #2c3e50;
+}
+
+.payment-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.payment-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.payment-form button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.payment-form button:hover {
+    background-color: #2980b9;
+}
+
+/* Sepetim Bölümü Stilleri */
+#cart {
+    margin-bottom: 20px; /* Ödeme ekranıyla arasına boşluk ekler */
+}
+
+button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+
+/* Favorilere Ekle butonu */
+.like-button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.like-button:hover {
+    background-color: #2980b9;
+}
+
+/* Favoriler sekmesi stilini güzelleştirme */
+#favorites-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+#favorites-list div {
+    width: 30%;
+    margin: 10px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    box-sizing: border-box;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease-in-out;
+}
+
+#favorites-list div:hover {
+    background-color: #f0f8ff;
+}
+
+#favorites-list img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+#favorites-list p {
+    margin: 10px 0;
+}
+
+#favorites-list button {
+    background-color: #dc3545;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#favorites-list button:hover {
+    background-color: #c82333;
+}
+
+#favorites-list .like-button {
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    color: #dc3545;
+    cursor: pointer;
+}
+
+#favorites-list .like-button:hover {
+    color: #c82333;
+}
+/* Ödeme Seçenekleri Bölümü Stilleri */
+#payment-options {
+    display: none;
+}
+
+#payment-options.active {
+    display: block;
+}
+
+.payment-options-container {
+    margin-top: 20px;
+}
+
+.payment-options-container label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#ödeme-screen {
+    max-width: 300px; /* Ödeme seçenekleri kutusunun maksimum genişliği */
+    margin: 0 auto; /* Ortalama */
+    padding: 20px; /* Dolgu */
+    border: 1px solid #ccc; /* Kenarlık */
+    border-radius: 5px; /* Kenar yuvarlama */
+}
+
+/* Ödeme seçenekleri içindeki labellar için stil */
+#ödeme-screen label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Ödeme butonu için stil */
+#ödeme-screen button {
+    background-color: #4caf50; /* Arka plan rengi */
+    color: white; /* Metin rengi */
+    padding: 10px 15px; /* Dolgu */
+    border: none; /* Kenarlık yok */
+    border-radius: 5px; /* Kenar yuvarlama */
+    cursor: pointer; /* İşaretçi türü */
+}
+
+/* Ödeme butonuna tıklanınca stil */
+#ödeme-screen button:hover {
+    background-color: #45a049; /* Hover durumunda arka plan rengi */
+}
+#payment-screen {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#payment-screen h2 {
+    color: #333;
+}
+
+#payment-screen form {
+    margin-top: 20px;
+}
+
+#payment-screen label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+#payment-screen input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+
+#payment-screen button {
+    background-color: #4caf50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#payment-screen button:hover {
+    background-color: #45a049;
+}
+
